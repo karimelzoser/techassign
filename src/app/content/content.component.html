@@ -1,0 +1,122 @@
+<app-graph></app-graph>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+      <h2 class="head-border-center awesome-head">Shown Data Option</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Open</th>
+            <th>High</th>
+            <th>Low</th>
+            <th>Close</th>
+            <th>Adjusted Close</th>
+            <th>Volume</th>
+            <th>Dividend Amount</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><input type="checkbox" [(ngModel)]="openShow" /></td>
+            <td><input type="checkbox" [(ngModel)]="highShow" /></td>
+            <td><input type="checkbox" [(ngModel)]="lowShow" /></td>
+            <td><input type="checkbox" [(ngModel)]="closeShow" /></td>
+            <td><input type="checkbox" [(ngModel)]="adjustShow" /></td>
+            <td><input type="checkbox" [(ngModel)]="volumeShow" /></td>
+            <td><input type="checkbox" [(ngModel)]="dividShow" /></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-sm-4 timeline">
+      <h2 class="head-border-center awesome-head">Timeline search</h2>
+      <!-- <input type="date" [(ngModel)]="minDate" />
+      <input type="date" [(ngModel)]="maxDate" /> -->
+      <label for="filter1">Start Date</label>
+      <select id="filter1" [(ngModel)]="minDate">
+        <option *ngFor="let dat of data">
+          {{ dat.date }}
+        </option>
+      </select>
+    </div>
+    <div class="col-sm-4 timeline">
+      <label for="filter2">End Date</label>
+      <select id="filter2" [(ngModel)]="maxDate">
+        <option *ngFor="let dat of data">
+          {{ dat.date }}
+        </option>
+      </select>
+    </div>
+    <div class="col-sm-1">
+      <button class="btn btn-primary search" (click)="onChange()">
+        Search
+      </button>
+    </div>
+  </div>
+
+  <button class="btn btn-success" (click)="ibmOn()">Show Ibm Data</button>
+  <button class="btn btn-primary" (click)="msftOn()">Show Msft Data</button>
+  <button class="btn btn-danger" (click)="allOn()">Show All Data</button>
+  <div class="row">
+    <div class="col-sm-6 ibm" *ngIf="ibm">
+      <h2 class="uppercase head-border-center awesome-head">IBM Company</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th *ngIf="openShow">Open</th>
+            <th *ngIf="highShow">High</th>
+            <th *ngIf="lowShow">Low</th>
+            <th *ngIf="closeShow">Close</th>
+            <th *ngIf="adjustShow">Adjusted Close</th>
+            <th *ngIf="volumeShow">Volume</th>
+            <th *ngIf="dividShow">Dividend Amount</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let datum2 of filteredData">
+            <td>{{ datum2.date }}</td>
+            <td *ngIf="openShow">{{ datum2.open }}</td>
+            <td *ngIf="highShow">{{ datum2.high }}</td>
+            <td *ngIf="lowShow">{{ datum2.low }}</td>
+            <td *ngIf="closeShow">{{ datum2.close }}</td>
+            <td *ngIf="adjustShow">{{ datum2.adjustedClose }}</td>
+            <td *ngIf="volumeShow">{{ datum2.volume }}</td>
+            <td *ngIf="dividShow">{{ datum2.dividendAmount }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="col-sm-6 msft" *ngIf="msft">
+      <h2 class="head-border-center awesome-head">MSFT Company</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th *ngIf="openShow">Open</th>
+            <th *ngIf="highShow">High</th>
+            <th *ngIf="lowShow">Low</th>
+            <th *ngIf="closeShow">Close</th>
+            <th *ngIf="adjustShow">Adjusted Close</th>
+            <th *ngIf="volumeShow">Volume</th>
+            <th *ngIf="dividShow">Dividend Amount</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let datum2 of filteredData2">
+            <td>{{ datum2.date }}</td>
+            <td *ngIf="openShow">{{ datum2.open }}</td>
+            <td *ngIf="highShow">{{ datum2.high }}</td>
+            <td *ngIf="lowShow">{{ datum2.low }}</td>
+            <td *ngIf="closeShow">{{ datum2.close }}</td>
+            <td *ngIf="adjustShow">{{ datum2.adjustedClose }}</td>
+            <td *ngIf="volumeShow">{{ datum2.volume }}</td>
+            <td *ngIf="dividShow">{{ datum2.dividendAmount }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

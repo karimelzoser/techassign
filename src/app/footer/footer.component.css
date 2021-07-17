@@ -1,0 +1,12 @@
+.footer {
+  background-color: burlywood;
+  width: 100%;
+}
+
+strong {
+  padding: 20px;
+  color: #f7ece7;
+  text-align: center;
+  font-size: 50px;
+  margin: 0 380px;
+}

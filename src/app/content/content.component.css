@@ -1,0 +1,76 @@
+.row {
+  margin-bottom: 40px;
+}
+.search {
+  margin-left: -75px;
+}
+
+button {
+  margin-left: 20px;
+  padding: 10px;
+}
+
+table {
+  background: linear-gradient(45deg, #49a09d, #8250a3);
+
+  border-collapse: collapse;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.ibm table {
+  margin-left: -150px;
+}
+
+th,
+td {
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+
+th {
+  text-align: left;
+}
+
+thead th {
+  background-color: #55608f;
+}
+
+tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+td {
+  position: relative;
+}
+td:before {
+  content: "";
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.head-border-center:after {
+  content: "";
+  display: block;
+  width: 70px;
+  height: 3px;
+  margin: 3px auto;
+  background-color: #ff8b38;
+}
+.uppercase {
+  text-transform: uppercase;
+}
+
+.awesome-head {
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.timeline {
+  padding: 10px;
+}
+
+label {
+  padding: 3px;
+}

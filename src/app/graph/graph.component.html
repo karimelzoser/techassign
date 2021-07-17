@@ -1,0 +1,104 @@
+<h2 class="uppercase head-border-center awesome-head">
+  Getting Meta Data From JSON File
+</h2>
+<p class="lead">Show it, Graph it, Adjusting its Search & Showing</p>
+<div class="row">
+  <div class="col-sm-6">
+    <table>
+      <thead>
+        <tr>
+          <th>Open</th>
+          <th>High</th>
+          <th>Low</th>
+          <th>Close</th>
+          <th>Adjusted Close</th>
+          <th>Volume</th>
+          <th>Dividend Amount</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <input
+              type="radio"
+              name="graph"
+              id="openid"
+              value="open"
+              [(ngModel)]="graphData"
+              (change)="onChaning()"
+            />
+          </td>
+          <td>
+            <input
+              type="radio"
+              name="graph"
+              id="highid"
+              value="high"
+              [(ngModel)]="graphData"
+              (change)="onChaning()"
+            />
+          </td>
+          <td>
+            <input
+              type="radio"
+              name="graph"
+              id="lowid"
+              value="low"
+              [(ngModel)]="graphData"
+              (change)="onChaning()"
+            />
+          </td>
+          <td>
+            <input
+              type="radio"
+              name="graph"
+              id="closeid"
+              value="close"
+              [(ngModel)]="graphData"
+              (change)="onChaning()"
+            />
+          </td>
+          <td>
+            <input
+              type="radio"
+              id="adjustid"
+              name="graph"
+              value="adjust"
+              [(ngModel)]="graphData"
+              (change)="onChaning()"
+            />
+          </td>
+          <td>
+            <input
+              type="radio"
+              name="graph"
+              id="volume"
+              value="volume"
+              [(ngModel)]="graphData"
+              (change)="onChaning()"
+            />
+          </td>
+          <td>
+            <input
+              type="radio"
+              name="graph"
+              id="divid"
+              value="divid"
+              [(ngModel)]="graphData"
+              (change)="onChaning()"
+            />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="col-sm-6">
+    <h2 class="head-border-center awesome-head">
+      Graph Between Date & {{ graphData }} Data.
+    </h2>
+  </div>
+</div>
+
+<div>
+  <canvas id="myChart" width="1000" height="200"></canvas>
+</div>

@@ -1,0 +1,10 @@
+.navbar-inverse {
+  background-color: #14383b;
+  padding: 10px;
+  text-align: center;
+  border-radius: 0;
+  margin-bottom: 50px;
+}
+strong {
+  font-size: 50px;
+}
